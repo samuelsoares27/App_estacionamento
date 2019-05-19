@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Gerador de Tickets
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="style">
+    <img src="/assets/carros.jpg" width="390" height="170" style="margin-top:-80px;"/>
+    <!--<h4>Ticket do Estacionamento</h4><br> -->
+    <ion-item> 
+      <ion-label class="fonte" position="floating">Ticket</ion-label>
+      <ion-input type="tel" disabled="true" [(ngModel)]="codigo"></ion-input>
+    </ion-item><br>
+    <ion-button expand="block" (click)="GeraCodigo()">Gerar Ticket</ion-button>
+    
+  </div>
+  
+
+</ion-content>

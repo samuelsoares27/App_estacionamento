@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Controle dos Carros
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <tr *ngFor="let item of (pag | async)">  
+        <ion-card *ngIf="item.datafinal=='00:00'" color="danger"  [routerLink]="['/pagamentos',{id: item.id}]">
+          <ion-card-header>
+            <ion-card-subtitle *ngIf="item.datafinal=='00:00'">Ticket Não Pago:{{item.ticket}} </ion-card-subtitle>
+            <ion-card-subtitle *ngIf="item.datafinal!='00:00'">Ticket Pago:{{item.ticket}} </ion-card-subtitle>
+          </ion-card-header>    
+          <ion-card-content>
+            <td>Hora da Entrada: {{item.datainicial}}</td>
+            <td>Hora da Saida:   {{item.datafinal}}</td>
+            <td>Valor Pago:      {{item.valor}}</td>
+          </ion-card-content>
+        </ion-card>
+        <ion-card *ngIf="item.datafinal!='00:00'" color="success">
+            <ion-card-header>
+              <ion-card-subtitle *ngIf="item.datafinal=='00:00'">Ticket Não Pago:{{item.ticket}} </ion-card-subtitle>
+              <ion-card-subtitle *ngIf="item.datafinal!='00:00'">Ticket Pago:{{item.ticket}} </ion-card-subtitle>
+            </ion-card-header>    
+            <ion-card-content>
+              <td>Hora da Entrada: {{item.datainicial}}</td>
+              <td>Hora da Saida:   {{item.datafinal}}</td>
+              <td>Valor Pago:      {{item.valor}}</td>
+            </ion-card-content>
+        </ion-card>
+    </tr>
+
+</ion-content>
