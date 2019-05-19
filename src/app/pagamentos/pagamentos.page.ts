@@ -48,7 +48,7 @@ export class PagamentosPage implements OnInit {
       this.TotalPagar = Calculo;
       if(this.TotalPagar != 0){
         this.AtualizarLista();
-        //this.AlertPagamento();
+        this.AlertPagamento();
         this.router.navigate(['/tabs/tab3']);
         
       
