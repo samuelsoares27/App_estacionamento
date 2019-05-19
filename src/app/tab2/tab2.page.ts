@@ -33,11 +33,12 @@ export class Tab2Page {
             if (pagamento.valor == 0){
               
               this.AlertNTiket();
+              this.ticket = '';
            
             }else{
 
               this.AlertPago();
-
+              this.ticket = '';
             }
 
           }
